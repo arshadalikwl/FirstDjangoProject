@@ -2,7 +2,10 @@ from django.shortcuts import render,HttpResponse
 
 # Create your views here.
 def index(request):
-    return HttpResponse("This is Home page.")    
+    content ={
+        'price' : 1100
+    }
+    return render(request,"index.html",content)   
 
 def about(request):
     return HttpResponse("This is About page.")
