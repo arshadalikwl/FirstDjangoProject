@@ -1,35 +1,237 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <title>Learn python django</title>
-  </head>
-  <body>
-    <div class="container-fluid">
-      <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-          <svg class="bi me-2" width="40" height="32" aria-hidden="true">
-            <use xlink:href="#bootstrap"></use>
-          </svg> <span class="fs-4">Simple header</span>
-        </a>
-        <ul class="nav nav-pills">
-          <li class="nav-item">
-            <a href="/" class="nav-link active" aria-current="page">Home</a>
-          </li> <li class="nav-item">
-            <a href="/services" class="nav-link">Services</a>
-          </li> <li class="nav-item">
-            <a href="/about" class="nav-link">AboutUs</a>
-          </li> <li class="nav-item">
-            <a href="#" class="nav-link">FAQs</a>
-          </li> <li class="nav-item">
-            <a href="/contact" class="nav-link">ContactUs</a>
-          </li>
-        </ul>
-      </header>
-      <h1>Today gold price is =${{price}} </h1>
+{% extends 'base.html' %}
+
+{% block title %}
+  Home
+{% endblock %}
+
+{% block body %}
+  <!-- ABOUT SECTION -->
+  <section class="about-section section-padding" id="about">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1000&q=80" class="img-fluid about-image" alt="Modern professional office" />
+        </div>
+
+        <div class="col-lg-6">
+          <span class="section-subtitle">About Us</span>
+
+          <h2 class="display-6 fw-bold mt-3 mb-4">We Help Your Business Grow Digitally</h2>
+
+          <p class="text-secondary mb-4">We are committed to helping businesses build a strong online presence through modern design, innovative technology, and reliable digital solutions.</p>
+
+          <p class="text-secondary mb-4">Our goal is to deliver user-friendly, responsive, and high-quality solutions that meet your business needs and help you achieve long-term success.</p>
+
+          <div class="row g-3 mb-4">
+            <div class="col-sm-6">
+              <p>
+                <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                Professional Team
+              </p>
+            </div>
+
+            <div class="col-sm-6">
+              <p>
+                <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                Quality Solutions
+              </p>
+            </div>
+
+            <div class="col-sm-6">
+              <p>
+                <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                On-Time Delivery
+              </p>
+            </div>
+
+            <div class="col-sm-6">
+              <p>
+                <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                Customer Support
+              </p>
+            </div>
+          </div>
+
+          <a href="#services" class="btn btn-primary btn-custom">Explore Our Services</a>
+        </div>
+      </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-  </body>
-</html>
+  </section>
+
+  <!-- SERVICES SECTION -->
+  <section class="section-padding" id="services">
+    <div class="container">
+      <div class="text-center mb-5">
+        <span class="section-subtitle">What We Offer</span>
+        <h2 class="display-6 fw-bold mt-3">Our Services</h2>
+        <p class="text-secondary mx-auto" style="max-width: 600px;">We provide modern digital services to help your business succeed in today's competitive market.</p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Service 1 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card service-card">
+            <div class="icon-box">
+              <i class="bi bi-code-slash"></i>
+            </div>
+
+            <h4 class="fw-bold">Web Development</h4>
+
+            <p class="text-secondary">We build responsive, secure, and high-performance websites tailored to your business requirements.</p>
+
+            <a href="#contact" class="text-primary text-decoration-none fw-semibold">Learn More <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card service-card">
+            <div class="icon-box">
+              <i class="bi bi-palette"></i>
+            </div>
+
+            <h4 class="fw-bold">UI/UX Design</h4>
+
+            <p class="text-secondary">We create attractive and intuitive interfaces that deliver a smooth and enjoyable user experience.</p>
+
+            <a href="#contact" class="text-primary text-decoration-none fw-semibold">Learn More <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card service-card">
+            <div class="icon-box">
+              <i class="bi bi-cart-check"></i>
+            </div>
+
+            <h4 class="fw-bold">E-Commerce Solutions</h4>
+
+            <p class="text-secondary">Launch your online store with product management, shopping carts, and secure payment integrations.</p>
+
+            <a href="#contact" class="text-primary text-decoration-none fw-semibold">Learn More <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card service-card">
+            <div class="icon-box">
+              <i class="bi bi-phone"></i>
+            </div>
+
+            <h4 class="fw-bold">Mobile-Friendly Design</h4>
+
+            <p class="text-secondary">We ensure your website works smoothly across smartphones, tablets, laptops, and desktops.</p>
+
+            <a href="#contact" class="text-primary text-decoration-none fw-semibold">Learn More <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Service 5 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card service-card">
+            <div class="icon-box">
+              <i class="bi bi-search"></i>
+            </div>
+
+            <h4 class="fw-bold">SEO Optimization</h4>
+
+            <p class="text-secondary">Improve your website's technical SEO, structure, and search visibility with effective optimization.</p>
+
+            <a href="#contact" class="text-primary text-decoration-none fw-semibold">Learn More <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Service 6 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card service-card">
+            <div class="icon-box">
+              <i class="bi bi-tools"></i>
+            </div>
+
+            <h4 class="fw-bold">Maintenance & Support</h4>
+
+            <p class="text-secondary">Keep your website updated, secure, and running efficiently with ongoing maintenance and technical support.</p>
+
+            <a href="#contact" class="text-primary text-decoration-none fw-semibold">Learn More <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES SECTION -->
+  <section class="section-padding bg-light" id="features">
+    <div class="container">
+      <div class="text-center mb-5">
+        <span class="section-subtitle">Why Choose Us</span>
+        <h2 class="display-6 fw-bold mt-3">Features That Make Us Different</h2>
+        <p class="text-secondary mx-auto" style="max-width: 600px;">We focus on quality, performance, and customer satisfaction in every project we deliver.</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <div class="feature-card bg-white">
+            <i class="bi bi-phone feature-icon"></i>
+            <h5 class="fw-bold mt-3">Fully Responsive</h5>
+            <p class="text-secondary mb-0">Designs adapt to different screen sizes and devices.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="feature-card bg-white">
+            <i class="bi bi-lightning-charge feature-icon"></i>
+            <h5 class="fw-bold mt-3">Fast Performance</h5>
+            <p class="text-secondary mb-0">Optimized pages for faster loading and better usability.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="feature-card bg-white">
+            <i class="bi bi-shield-check feature-icon"></i>
+            <h5 class="fw-bold mt-3">Security Focused</h5>
+            <p class="text-secondary mb-0">We follow appropriate security practices to protect websites.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="feature-card bg-white">
+            <i class="bi bi-people feature-icon"></i>
+            <h5 class="fw-bold mt-3">Customer Focused</h5>
+            <p class="text-secondary mb-0">Solutions designed around your goals and requirements.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="feature-card bg-white">
+            <i class="bi bi-arrows-angle-expand feature-icon"></i>
+            <h5 class="fw-bold mt-3">Scalable Solutions</h5>
+            <p class="text-secondary mb-0">Flexible designs that can grow with your business.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="feature-card bg-white">
+            <i class="bi bi-headset feature-icon"></i>
+            <h5 class="fw-bold mt-3">Reliable Support</h5>
+            <p class="text-secondary mb-0">Technical guidance and support when you need it.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT CTA SECTION -->
+  <section class="section-padding" id="contact">
+    <div class="container">
+      <div class="bg-primary text-white rounded-4 p-4 p-md-5 text-center">
+        <h2 class="fw-bold mb-3">Ready to Start Your Project?</h2>
+
+        <p class="mb-4">Let's discuss your ideas and build something great together.</p>
+
+        <a href="mailto:info@example.com" class="btn btn-light btn-custom fw-semibold">Contact Us <i class="bi bi-envelope ms-2"></i></a>
+      </div>
+    </div>
+  </section>
+{% endblock %}

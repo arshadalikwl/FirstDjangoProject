@@ -1,0 +1,109 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Our Services | MyBusiness{% endblock %}
+
+{% block body %}
+
+<section class="page-banner text-center text-white">
+    <div class="container">
+        <h1 class="display-4 fw-bold">Our Services</h1>
+        <p class="lead">Discover solutions designed for your business.</p>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container">
+
+        <div class="text-center mb-5">
+            <span class="text-primary fw-bold">WHAT WE DO</span>
+            <h2 class="fw-bold mt-2">Services We Provide</h2>
+            <p class="text-secondary">
+                Explore our services and find the right solution for your needs.
+            </p>
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-md-6 col-lg-4">
+                <div class="service-card text-center p-4 h-100">
+                    <i class="bi bi-code-slash service-icon"></i>
+                    <h4 class="fw-bold mt-3">Web Development</h4>
+                    <p class="text-secondary">
+                        Modern, responsive, and functional websites
+                        tailored to your business requirements.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="service-card text-center p-4 h-100">
+                    <i class="bi bi-palette service-icon"></i>
+                    <h4 class="fw-bold mt-3">UI/UX Design</h4>
+                    <p class="text-secondary">
+                        Attractive, accessible, and user-friendly
+                        interfaces for digital products.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="service-card text-center p-4 h-100">
+                    <i class="bi bi-cart-check service-icon"></i>
+                    <h4 class="fw-bold mt-3">E-Commerce</h4>
+                    <p class="text-secondary">
+                        Online stores with product catalogs,
+                        shopping carts, and payment integrations.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="service-card text-center p-4 h-100">
+                    <i class="bi bi-phone service-icon"></i>
+                    <h4 class="fw-bold mt-3">Responsive Design</h4>
+                    <p class="text-secondary">
+                        Websites that adapt to mobile phones,
+                        tablets, laptops, and desktop screens.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="service-card text-center p-4 h-100">
+                    <i class="bi bi-search service-icon"></i>
+                    <h4 class="fw-bold mt-3">SEO Optimization</h4>
+                    <p class="text-secondary">
+                        Improve website structure and search visibility
+                        with practical SEO techniques.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="service-card text-center p-4 h-100">
+                    <i class="bi bi-tools service-icon"></i>
+                    <h4 class="fw-bold mt-3">Maintenance</h4>
+                    <p class="text-secondary">
+                        Website updates, bug fixes, performance checks,
+                        and ongoing technical support.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="text-center mt-5">
+            <h3 class="fw-bold">Have a project in mind?</h3>
+            <p class="text-secondary">
+                Let's discuss how we can help your business.
+            </p>
+            <a href="{% url 'contact' %}" class="btn btn-primary btn-lg">
+                Contact Us
+            </a>
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}

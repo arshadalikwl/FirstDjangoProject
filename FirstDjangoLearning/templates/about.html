@@ -1,0 +1,76 @@
+
+{% extends 'base.html' %}
+
+{% block title %}About Us | MyBusiness{% endblock %}
+
+{% block body %}
+
+<section class="page-banner text-center text-white">
+    <div class="container">
+        <h1 class="display-4 fw-bold">About Us</h1>
+        <p class="lead">Learn more about our company and our mission.</p>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container">
+        <div class="row align-items-center g-5">
+
+            <div class="col-lg-6">
+                <img
+                    src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1000&q=80"
+                    class="img-fluid rounded-4 shadow"
+                    alt="Our team working together">
+            </div>
+
+            <div class="col-lg-6">
+                <span class="text-primary fw-bold">WHO WE ARE</span>
+                <h2 class="fw-bold mt-2 mb-4">
+                    Helping Businesses Succeed
+                </h2>
+
+                <p class="text-secondary">
+                    We provide reliable and innovative solutions that
+                    help businesses establish a strong online presence.
+                    Our focus is on quality, creativity, and customer
+                    satisfaction.
+                </p>
+
+                <p class="text-secondary">
+                    Our team works closely with clients to understand
+                    their goals and deliver practical solutions that
+                    meet their requirements.
+                </p>
+
+                <div class="row mt-4">
+                    <div class="col-6">
+                        <h5 class="fw-bold">
+                            <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                            Our Mission
+                        </h5>
+                        <p class="text-secondary">
+                            Deliver quality services and lasting value.
+                        </p>
+                    </div>
+
+                    <div class="col-6">
+                        <h5 class="fw-bold">
+                            <i class="bi bi-eye-fill text-primary me-2"></i>
+                            Our Vision
+                        </h5>
+                        <p class="text-secondary">
+                            Build trusted, long-term partnerships.
+                        </p>
+                    </div>
+                </div>
+
+                <a href="{% url 'services' %}" class="btn btn-primary mt-3">
+                    Explore Our Services
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+{% endblock %}

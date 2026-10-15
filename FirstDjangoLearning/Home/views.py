@@ -1,4 +1,8 @@
-from django.shortcuts import render,HttpResponse
+from django.shortcuts import render,HttpResponse,redirect
+from django.views.decorators.http import require_http_methods
+from django.core.validators import validate_email
+from django.core.exceptions import ValidationError
+from django.contrib import messages
 
 # Create your views here.
 def index(request):
@@ -8,10 +12,37 @@ def index(request):
     return render(request,"index.html",content)   
 
 def about(request):
-    return HttpResponse("This is About page.")
+    return render(request,"about.html")
 
 def services(request):
-    return HttpResponse("This is Services page.")
+    return render(request,"services.html")
 
+@require_http_methods(["GET", "POST"])
 def contact(request):
-    return HttpResponse("This is Contact page.")    
+    if request.method == "POST":
+        name = request.POST.get('name').strip()
+        email= request.POST.get('email').strip()
+        subject= request.POST.get('subject').strip()
+        message= request.POST.get('message').strip()
+        if not all([name, email, subject, message]):
+            messages.error(request, "please fill all the fields")
+            return redirect('contact')
+        if len(name) > 100 or len(email) > 254:
+            messages.error(request, "Name or email is too long")
+            return redirect('contact')
+        if len(subject) > 200 or len(message) > 2000:
+            messages.error(request, "Subject or message is too long")
+            return redirect('contact')
+        try:
+            validate_email(email)
+        except ValidationError:
+            messages.error(request, "Invalid email address")
+            return redirect('contact')
+        
+        #validation completed
+        messages.success(
+            request, "Your message has been sent successfully. We will get back to you soon."
+        )
+        return redirect('contact')
+
+    return render(request,"contact.html")

@@ -16,6 +16,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
+# Changes the text in the upper-left corner of every admin page and the login page header
+admin.site.site_header = "Learning python Admin"
+
+# Changes the welcoming sub-header text at the top of the admin index (home) page
+admin.site.index_title = "Welcome to the Management Portal"
+
+# Changes the text displayed in the browser's title bar/tab
+admin.site.site_title = "Django Admin Portal"
 
 urlpatterns = [
     path('admin/', admin.site.urls),
