@@ -1,8 +1,12 @@
+from datetime import datetime
+
 from django.shortcuts import render,HttpResponse,redirect
 from django.views.decorators.http import require_http_methods
 from django.core.validators import validate_email
 from django.core.exceptions import ValidationError
 from django.contrib import messages
+
+from Home.models import Contact
 
 # Create your views here.
 def index(request):
@@ -40,6 +44,8 @@ def contact(request):
             return redirect('contact')
         
         #validation completed
+        contact = Contact(name=name, email=email, subject=subject, message=message,date=datetime.today())
+        contact.save()
         messages.success(
             request, "Your message has been sent successfully. We will get back to you soon."
         )
